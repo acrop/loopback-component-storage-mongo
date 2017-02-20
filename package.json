@@ -1,14 +1,11 @@
 {
   "name": "loopback-component-storage-mongo",
-  "version": "1.5.1",
+  "version": "1.6.1",
   "description": "",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
-    "pretest": "mongo admin --eval 'db.createUser({\"user\":\"username\", \"pwd\":\"password\",\"roles\":[{\"role\":\"readWrite\",\"db\":\"test_authenticated\"}]});'; echo",
-    "test": "COFFEECOV_INIT_ALL=false mocha 'test/{,**/}*.coffee'",
-    "posttest": "istanbul report",
-    "build": "gulp",
-    "watch": "gulp watch"
+    "test": "mocha test/*.js",
+    "posttest": "istanbul report"
   },
   "keywords": [
     "loopback",
@@ -18,42 +15,36 @@
     "connector",
     "storage"
   ],
-  "author": "Jérémie Drouet <jeremie.drouet@gmail.com>",
+  "authors": [
+    "Jérémie Drouet <jeremie.drouet@gmail.com>",
+    "Yonggang Luo <luoyonggang@gmail.com>"
+  ],
   "license": "ISC",
   "dependencies": {
-    "async": "^2.0.0-rc.2",
-    "bluebird": "^3.3.4",
-    "busboy": "^0.2.13",
-    "debug": "^2.2.0",
-    "formidable": "^1.0.17",
+    "async": "^2.1.5",
+    "bluebird": "^3.4.7",
+    "busboy": "^0.2.14",
+    "debug": "^2.6.1",
+    "formidable": "^1.1.1",
     "gridfs-stream": "^1.1.1",
-    "lodash": "^4.6.1",
-    "loopback-connector": "^2.3.0",
-    "mongodb": "^2.1.11",
+    "lodash": "^4.17.4",
+    "loopback-connector": "^3.0.0",
+    "mongodb": "^2.x",
     "string_decoder": "^0.10.31"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "codecov.io": "^0.1.6",
-    "coffee-coverage": "^1.0.1",
-    "coffee-script": "^1.10.0",
-    "compression": "^1.6.1",
-    "cors": "^2.7.1",
-    "gulp": "^3.9.1",
-    "gulp-coffee": "^2.3.1",
-    "gulp-mocha": "^2.2.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-util": "^3.0.7",
-    "istanbul": "^0.4.2",
-    "jshint": "^2.9.1",
-    "loopback": "^2.27.0",
-    "loopback-boot": "^2.17.0",
-    "loopback-component-explorer": "^2.4.0",
-    "loopback-datasource-juggler": "^2.45.2",
-    "mocha": "^2.4.5",
-    "mongodb": "^2.1.11",
-    "serve-favicon": "^2.3.0",
-    "superagent": "^1.8.2",
-    "supertest": "^1.2.0"
+    "compression": "^1.6.2",
+    "cors": "^2.8.1",
+    "istanbul": "^0.4.5",
+    "jshint": "^2.9.4",
+    "loopback": "^3.3.0",
+    "loopback-boot": "^2.23.0",
+    "loopback-component-explorer": "^4.1.1",
+    "loopback-datasource-juggler": "^3.2.0",
+    "mocha": "^3.2",
+    "serve-favicon": "^2.4.0",
+    "superagent": "^3.4.4",
+    "supertest": "^3.0.0"
   }
 }
